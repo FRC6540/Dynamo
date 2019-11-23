@@ -10,8 +10,10 @@
 
 
 package org.usfirst.frc6540.Dynamo.commands;
-import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc6540.Dynamo.Robot;
+
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
@@ -43,7 +45,8 @@ public class Forward extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-		Robot.drive.forward((float)1, (float)0);
+		
+		Robot.drive.forward((float)Robot.oi.getForward(), (float)Robot.oi.getRotation());
     }
 
     // Make this return true when this Command no longer needs to run execute()
